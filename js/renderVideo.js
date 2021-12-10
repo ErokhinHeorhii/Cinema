@@ -25,7 +25,7 @@ const renderVideo = async () => {
     console.log('data' , data);
     const[firstCard, ...otherCard] = data.results;
     // console.log("otherCard :", otherCard)
-    otherCard.length = 12;
+    otherCard.length = 4;
     console.log(otherCard);
     firstRender(firstCard);
     renderCard(otherCard)

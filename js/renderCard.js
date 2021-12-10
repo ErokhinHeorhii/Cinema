@@ -1,14 +1,14 @@
 
 const listCard = document.querySelector('.other-films__list')
 
-const renderCard = async data => {
+const renderCard = data => {
 
     listCard.textContent = '';
 
     const cards = data.map((item) => {
 
 
-        console.log(item) 
+        // console.log(item) 
 
         const card = document.createElement('li');
         card.className = 'other-films__item';
@@ -29,7 +29,7 @@ const renderCard = async data => {
 
     })
 
-    console.log(cards)
+    // console.log(cards)
     listCard.append(...cards)
 };
 

@@ -14,11 +14,22 @@ const menuLink = () => {
             const target = event.target.closest('.get-nav__link');// если кликанье мима таргета (..get-nav__link') получаешь null, при кликанье на ссылку получаешь эту ссылку.,  
             if (target) {
                 event.preventDefault();
-                filmWeek.style.display= 'none';
-                title.textContent= target.textContent;
+                filmWeek.style.display = 'none';
+                title.textContent = target.textContent;
+
+                if (target.classList.contains('get-nav__link_popular-movies')) {
+                    getPopular("movie")
+                        .then(data => renderCard(data.results))
+                }
+
+                if (target.classList.contains('get-nav__link_top-tv')) {
+                    getPopular("tv")
+                        .then(data => renderCard(data.results))
+
+                }
             }
-        })
     })
+})
 }
 
 export default menuLink;

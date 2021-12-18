@@ -8,7 +8,7 @@ const renderCard = data => {
     const cards = data.map((item) => {
 
 
-        // console.log(item) 
+        // console.log('item' , item) 
 
         const card = document.createElement('li');
         card.className = 'other-films__item';
@@ -16,7 +16,12 @@ const renderCard = data => {
         const link = document.createElement('a');
         link.className = 'other-films__link';
         link.dataset.rating = item.vote_average;
-    
+        // console.log(item.vote_average )
+        if (item.vote_average == '0'){
+            link.dataset.rating = item.vote_average ='-';   
+        };
+        
+
         const img = document.createElement('img');
         img.className = 'other-films__img';
         img.alt = `постер ${item.title || item.name}`;
